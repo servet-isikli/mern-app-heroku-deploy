@@ -1,7 +1,6 @@
 require("dotenv").config(); // .env dosyasındaki çevresel değişkenleri yükle
 const app = require("./server"); // Express uygulamasını içe aktar
 const mongoose = require("mongoose"); // Mongoose paketini içe aktar
-const cors = require("cors");
 
 const port = process.env.PORT || 5000;
 
