@@ -3,6 +3,14 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const app = express();
 
+app.use((req, res, next) => {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://mern-app-1-63392f33b62a.herokuapp.com/"
+  );
+  next();
+});
+
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
