@@ -1,10 +1,17 @@
+// index.js
+
 require("dotenv").config(); // .env dosyasındaki çevresel değişkenleri yükle
 
-const app = require("./server"); // Express uygulamasını içe aktar
-const mongoose = require("mongoose"); // Mongoose paketini içe aktar
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 
+const app = express();
 
-const port = process.env.PORT || 5000;
+// Middleware
+app.use(cors());
+app.use(bodyParser.json());
 
 // Mongoose Bağlantısı
 mongoose
@@ -22,3 +29,11 @@ mongoose
   .catch((err) => {
     console.error("MongoDB connection error:", err);
   });
+
+// Routes - Urun rotalarini kullanma
+const productRoutes = require("./routes/productRoutes");
+app.use("/api/products", productRoutes);
+
+// Routes - Kullanici rotalarını kullanma
+const userRoutes = require("./routes/userRoutes");
+app.use("/api/users", userRoutes);
