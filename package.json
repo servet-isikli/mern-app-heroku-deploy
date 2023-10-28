@@ -1,0 +1,16 @@
+{
+    "name": "proje-adi",
+    "version": "1.0.0",
+    "description": "Proje Açıklaması",
+    "main": "index.js",
+    "scripts": {
+        "start-server": "cd server && npm start",
+        "start-client": "cd client && npm start",
+        "start": "concurrently \"npm run start-server\" \"npm run start-client\""
+    },
+    "dependencies": {
+        "express": "^4.18.2"
+    }
+
+    
+}
