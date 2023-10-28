@@ -1,5 +1,5 @@
-// require("dotenv").config(); // .env dosyasındaki çevresel değişkenleri yükle
-require("dotenv").config({ path: "./server/.env" });
+require("dotenv").config(); // .env dosyasındaki çevresel değişkenleri yükle
+
 const app = require("./server"); // Express uygulamasını içe aktar
 const mongoose = require("mongoose"); // Mongoose paketini içe aktar
 
